@@ -21,7 +21,7 @@
 </head>
 <body>
     <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="background-color:blue;" >
+      <nav class="navbar navbar-expand-md navbar-dark  fixed-top" style="background-color:#007cae;" >
         <div class="container">
           <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Service Previsions Generale</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,16 @@
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'blog-about' %}">Courses</a>
+              <a class="nav-item nav-link" href="{% url 'blog-about' %}">Projects</a>
               <a class="nav-item nav-link" href="{% url 'blog-about' %}">About Us</a>
+
+              <a class="nav-item nav-link" href="{% url 'blog-about' %}">FAQ </a>
+
+           
+
+
+
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
@@ -73,7 +82,7 @@
 
             <div class="card mb-3">  <!-- start card for blogs -->
 
-              <h3 class="text-center bg-secondary text-light p-2" > Latest Posts   </h3>
+              <h3 class="text-center text-light p-2" style="background-color:#007cae;" > Latest Posts   </h3>
           
               <ul>
           <li><a href="#">  first post </a> </li>
@@ -90,7 +99,7 @@
 
           <div class="card mb-3">  <!-- start card for comments -->
 
-            <h3 class="text-center bg-secondary text-light p-2" > Latest comments    </h3>
+            <h3 class="text-center  text-light p-2" style="background-color:#007cae;"> Latest comments    </h3>
         
             <ul>
               <li><a href="#">  first comment </a> </li>
@@ -117,10 +126,10 @@
 
     <!-- start footer  -->
 
-
+<!-- #007cae !important -->
 
     
-<footer class="bg-secondary">
+<footer  style="background-color:#007cae;">
   <div class="container-fluid">  
 
       <div class="row">
@@ -136,7 +145,7 @@ Contact us ?
 <div class="card-body">
 
 <div class="text-center">
-<img src="" alt=" logo " width="100px">
+<img src="{% static 'blog/img/pexels-photo.jpg' %}" alt=" logo " width="30px">
 
 </div>Django Tutorial provides basic and advanced concepts of Django. Our Django Tutorial 
 is designed for beginners and professionals both.
