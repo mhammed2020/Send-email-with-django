@@ -18,34 +18,38 @@
     </div>
   </article>
 
-  
-    <h2 class="border-bottom mt-5 mb-3"> Comments ({{comments.count}})</h2>
-    {% for comment in comments  %}
+  <!-- comment chapter -->
+
+<h2 class="border-bottom mt-5 mb-3"> Comments ({{comments.count}}) </h2>
+
+{% for comment in comments  %}
+<ul class="p-3 comment">
+    <h6 class="border-bottom p-2">  ({{comment.name}})  
+ <span class="text-secondary"> {{comment.comment_date | date:'d-m-Y'}} </span>  
+    </h6>
+     {{comment.body}}
       
-    <ul class="p-3 comment">
-      <h6 class="border-bottom p-2">  ({{comment.name}})  
-   <span class="text-secondary"> {{comment.comment_date | date:'d-m-Y'}} </span>  
-      </h6>
-       {{comment.body}}
-        
-  </ul>
+</ul>
 
 
 
 {% empty  %}
-      <h6 class="text-center p-4 comment">   no comments </h6>
+    <h6 class="text-center p-4 comment">    No comments </h6>
+
     {% endfor %}
- <!-- create form for comment  -->
 
- <h3 class="border-bottom pb-3 mb-3 mt-5">   Add new comment  </h3>
+    <!-- create form for comment  -->
 
- <div class="border p-4 mb-5 mt-4 ">
+    <h3 class="border-bottom pb-3 mb-3 mt-5">   Add new comment   </h3>
 
- <form method="POST">
-   {% csrf_token %}
+    <div class="border p-4 mb-5 mt-4 ">
 
-   <input class="btn btn-secondary" type="submit" value=" Publish ">
- </form>
- 
+    <form method="POST">
+      {% csrf_token %}
+
+      <input class="btn btn-secondary" type="submit" value="Publish comment ">
+    </form>
+    
 </div>
+
 {% endblock content %}
