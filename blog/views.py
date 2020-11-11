@@ -7,7 +7,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-from .models import Post
+from .models import Post,Comment
 from django.contrib.auth.models import User
 
 
@@ -36,8 +36,26 @@ class UserPostListView(ListView):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
 
-class PostDetailView(DetailView):
-    model = Post
+# class PostDetailView(DetailView):
+#     model = Post
+
+# function based views 
+
+def post_detail(request,post_id) :
+    
+    post = get_object_or_404(Post,pk=post_id)
+    comments = post.comments.filter(active=True)
+
+    context ={
+        'title':post,
+        'post' : post,
+        'comments':comments,
+       
+    }
+
+   
+    return render(request,'blog/post_detail.html', context)
+
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):

@@ -23,13 +23,13 @@ class Comment(models.Model):
     body = models.TextField()
 
     comment_date = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=True)
+    active = models.BooleanField(default=False)
 
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     
 
     def __str__(self):
-        return '  {} comments {} post'.format(self.name,self.post)
+        return '  {} comments {} '.format(self.name,self.post)
 
     
 
