@@ -15,3 +15,23 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'pk': self.pk})
+
+class Comment(models.Model):
+    
+    name = models.CharField(max_length=50 )
+    email = models.EmailField()
+    body = models.TextField()
+
+    comment_date = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+
+    post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    
+
+    def __str__(self):
+        return '  {} comments {} post'.format(self.name,self.post)
+
+    
+
+    class Meta :
+        ordering = ('-comment_date',)
