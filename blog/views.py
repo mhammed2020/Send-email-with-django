@@ -7,7 +7,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-from .models import Post,Comment
+from .models import Post,Comment,Project
 from django.contrib.auth.models import User
 
 
@@ -95,3 +95,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
+
+
+
+def allProjects(request):
+   
+    return  render(request,'blog/allposts.html',{})
