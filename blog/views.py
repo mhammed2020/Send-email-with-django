@@ -96,7 +96,12 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
 
-
+class ProjectListView(ListView):
+    model = Project
+    template_name = 'blog/allposts.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'allposts'
+    ordering = ['-created']
+    paginate_by = 4
 
 def allProjects(request):
 
