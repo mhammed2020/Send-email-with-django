@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from PIL import Image
 
 
 class Post(models.Model):
@@ -43,3 +44,6 @@ class Project(models.Model):
     created = models.DateTimeField(default=timezone.now())
     def __str__(self):
         return  self.title
+
+    
+    

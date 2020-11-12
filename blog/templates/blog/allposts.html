@@ -3,70 +3,26 @@
 {% block content %}
 
 
+<!--  -->
+
 {% for post in allposts %}
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ post.img.url }}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <!-- <a class="mr-2" href="#">{{ post.author }}</a> -->
+        <h5 class="card-title">{{post.title}}</h5>
 
-<div class="col-md-4">
-    <div class="card" style="width: 18rem;">
-        {% if post.img %}
-        <img src="{{post.img.url}}" class="card-img-top" width="70px">
-       {%endif%}
-        <div class="card-body">
-            <h5 class="card-title">{{post.title}}</h5>
-            <p class="card-text">{{post.content |safe|truncatewords_html:20}}</p>
-            <a href="#" class="btn btn-primary">Read more</a>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+        <small class="text-muted">{{ post.created|date:"F d, Y" }}</small>
+        
       </div>
+      <h2 class="article-title">{{ post.title }}</h2>
+      <p class="article-content">{{post.content |safe|truncatewords_html:20}}</p>
     </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
+  </article>
+<!--  -->
 
 {% endfor %}
 
-
-
-
-
 {% endblock  %}
+
