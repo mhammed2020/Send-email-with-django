@@ -99,5 +99,11 @@ def about(request):
 
 
 def allProjects(request):
-   
-    return  render(request,'blog/allposts.html',{})
+
+    allPosts=Project.objects.all()
+
+    context= {
+        'allposts':allPosts,
+    }
+       
+    return  render(request,'blog/allposts.html',context)

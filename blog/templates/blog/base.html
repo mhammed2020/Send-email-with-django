@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
     <link rel="stylesheet" type="text/css" href=" {% static 'blog/css/main2.css' %}" >
+    <link rel="stylesheet" href="{% static 'blog/css/style2.css' %}">
 
 
 
@@ -72,60 +73,75 @@
               </div>
             {% endfor %}
           {% endif %}
+
+          
           {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3> Main Contributor</h3>
-            <p class='text-muted'>You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
-
-            <div class="card mb-3">  <!-- start card for blogs -->
-
-              <h3 class="text-center text-light p-2" style="background-color:#007cae;" > Latest Posts   </h3>
-          
-              <!-- <ul>
-          <li><a href="#">  first post </a> </li>
-          <li><a href="#">  first post </a> </li>
-          <li><a href="#">  first post </a> </li>
-          <li><a href="#">  first post </a> </li>
-          <li><a href="#">  first post </a> </li>
-         
-
-          
-              </ul> -->
 
 
-          {% include "blog/latest_posts.html" %}
-          </div><!-- end card for blogs -->
-
-          <div class="card mb-3">  <!-- start card for comments -->
-
-            <h3 class="text-center  text-light p-2" style="background-color:#007cae;"> Latest comments    </h3>
-        
-            <ul>
-              <li><a href="#">  first comment </a> </li>
-              <li><a href="#">  first comment </a> </li>
-              <li><a href="#">  first comment </a> </li>
-              <li><a href="#">  first comment </a> </li>
-              <li><a href="#">  first comment </a> </li>
-              <li><a href="#">  first comment </a> </li>
-     
-        
-        
-            </ul>
-        
-        </div><!-- end card for comments -->
-        
-          </div>
 
         </div>
+
+        <!--  -->
+
+        
+<!--  -->
+
+
+<div class="col-md-4">
+  <div class="content-section">
+    <h3> Main Contributor</h3>
+    <p class='text-muted'>You can put any information here you'd like.
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-light">Latest Posts</li>
+        <li class="list-group-item list-group-item-light">Announcements</li>
+        <li class="list-group-item list-group-item-light">Calendars</li>
+        <li class="list-group-item list-group-item-light">etc</li>
+      </ul>
+    </p>
+
+    <div class="card mb-3">  <!-- start card for blogs -->
+
+      <h3 class="text-center text-light p-2" style="background-color:#007cae;" > Latest Posts   </h3>
+  
+      <!-- <ul>
+  <li><a href="#">  first post </a> </li>
+  <li><a href="#">  first post </a> </li>
+  <li><a href="#">  first post </a> </li>
+  <li><a href="#">  first post </a> </li>
+  <li><a href="#">  first post </a> </li>
+ 
+
+  
+      </ul> -->
+
+
+  {% include "blog/latest_posts.html" %}
+  </div><!-- end card for blogs -->
+
+  <div class="card mb-3">  <!-- start card for comments -->
+
+    <h3 class="text-center  text-light p-2" style="background-color:#007cae;"> Latest comments    </h3>
+
+    <ul>
+      <li><a href="#">  first comment </a> </li>
+      <li><a href="#">  first comment </a> </li>
+      <li><a href="#">  first comment </a> </li>
+      <li><a href="#">  first comment </a> </li>
+      <li><a href="#">  first comment </a> </li>
+      <li><a href="#">  first comment </a> </li>
+
+
+
+    </ul>
+
+</div><!-- end card for comments -->
+
+  </div>
+
+</div>
+
+
+
       </div>
     </main>
 
