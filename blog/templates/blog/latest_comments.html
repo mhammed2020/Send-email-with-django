@@ -2,7 +2,7 @@
 
     {% for comment  in comments  %}
       <li class="list-group-item latest-comment-item" >
-           <a class="text-dark" href="{% url 'post-detail' comment.post.pk  %}"> {{comment.body}} </a> 
+           <a class="text-dark" href="{% url 'post-detail' comment.post.pk  %}"> {{comment.body |safe|truncatewords_html:3}} </a> 
         
       </li>
 
