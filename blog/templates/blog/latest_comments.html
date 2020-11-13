@@ -2,7 +2,15 @@
 
     {% for comment  in l_comments  %}
       <li class="list-group-item latest-comment-item" >
-           <a class="text-dark" href="{% url 'post-detail' comment.post.pk  %}"> {{comment.body |safe|truncatewords_html:5}} </a> 
+           <a class="text-dark" href="{% url 'post-detail' comment.post.pk  %}"> 
+            {% if comment.body|length > 15 %}
+            {{comment.body |slice:'14'}} .. 
+          
+            {% else %}
+            {{comment.body}}
+            {% endif %}
+          
+          </a> 
         
       </li>
 
