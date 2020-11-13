@@ -36,8 +36,15 @@ class UserPostListView(ListView):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
         return Post.objects.filter(author=user).order_by('-date_posted')
 
-# class PostDetailView(DetailView):
-#     model = Post
+class PostDetailView(DetailView):
+    model = Post
+
+
+# class CommentDetailView(DetailView):
+#     model = Comment
+#     context_object_name = 'comments'
+
+
 
 # function based views 
 
@@ -102,6 +109,10 @@ class ProjectListView(ListView):
     context_object_name = 'allposts'
     ordering = ['-created']
     paginate_by = 4
+
+class ProjectDetailView(DetailView):
+    model = Project
+
 
 def allProjects(request):
 
