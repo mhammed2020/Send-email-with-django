@@ -21,7 +21,7 @@ class Comment(models.Model):
     
     name = models.CharField(max_length=50 )
     email = models.EmailField()
-    body = models.TextField()
+    body = models.TextField(verbose_name='Comment')
 
     comment_date = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
