@@ -47,8 +47,9 @@
 
     <form method="POST">
       {% csrf_token %}
+      {{comment_form.as_p}}
 
-      <input class="btn btn-info" type="submit" value="Publish comment ">
+      <input class="btn btn-info" type="submit" value="Publish ">
     </form>
     
 </div>

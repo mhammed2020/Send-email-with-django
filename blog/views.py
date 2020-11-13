@@ -10,6 +10,9 @@ from django.views.generic import (
 from .models import Post,Comment,Project
 from django.contrib.auth.models import User
 
+#comment form section
+
+from .forms import NewComment
 
 def home(request):
     context = {
@@ -52,12 +55,12 @@ def post_detail(request,post_id) :
     
     post = get_object_or_404(Post,pk=post_id)
     comments = post.comments.filter(active=True)
-
+    comment_form = NewComment()
     context ={
         'title':post,
         'post' : post,
         'comments':comments,
-       
+        'comment_form' :comment_form, 
     }
 
    
