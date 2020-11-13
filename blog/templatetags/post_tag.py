@@ -19,7 +19,7 @@ def latest_comments() : #simple python function
 
     context ={
 
-        'l_comments' : Comment.objects.filter(active = True)[:5]
+        'l_comments' : Comment.objects.all()[0:5]
 
     }
     return context
