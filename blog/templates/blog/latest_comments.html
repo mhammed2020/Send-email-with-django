@@ -2,12 +2,12 @@
 
     {% for comment  in comments  %}
       <li class="list-group-item latest-comment-item" >
-           <a class="text-dark" href="{% url 'detail' comment.post.pk  %}"> {{comment.body}} </a> 
+           <a class="text-dark" href="{% url 'post-detail' comment.post.pk  %}"> {{comment.body}} </a> 
         
       </li>
 
       {% empty %}
-      <li class="list-group-item latest-comment-item" >  لا يوجد تعليقات </li>
+      <li class="list-group-item latest-comment-item" >  No comments </li>
 
     {% endfor %}
 

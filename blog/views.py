@@ -54,7 +54,7 @@ class PostDetailView(DetailView):
 def post_detail(request,post_id) :
     
     post = get_object_or_404(Post,pk=post_id)
-    comments = post.comments.all()
+    comments = post.comments.filter(active=True)
     comment_form = NewComment()
     new_comment = None
 
