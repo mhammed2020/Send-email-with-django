@@ -2,7 +2,7 @@
 
     {% for post  in l_posts  %}
       <li class="list-group-item latest-post-item" >
-           <a class="text-dark" href="{% url 'post-detail' post.pk  %}"> {{post.title |safe|truncatewords_html:5}} </a> 
+           <a class="text-dark border-bottom" href="{% url 'post-detail' post.pk  %}"> {{post.title |safe|truncatewords_html:5}} </a> 
         
       </li>
     {% endfor %}
