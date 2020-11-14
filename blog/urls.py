@@ -12,7 +12,6 @@ from .views import (
     
 )
 from . import views
-
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
     path('project/', ProjectListView.as_view(), name='allPosts'),
@@ -21,7 +20,7 @@ urlpatterns = [
 
 
 #   path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
-    path('detail/<int:post_id>/', views.post_detail, name='post-detail'),
+    path('detail/<slug:post_id>/', views.post_detail, name='post-detail'),
 
     path('project/<int:pk>/', ProjectDetailView.as_view(), name='project-detail'),
 
@@ -29,7 +28,7 @@ urlpatterns = [
 
 
     path('post/new/', PostCreateView.as_view(), name='post-create'),
-    path('post/<int:pk>/update/', PostUpdateView.as_view(), name='post-update'),
-    path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
+    path('post/<slug:pk>/update/', PostUpdateView.as_view(), name='post-update'),
+    path('post/<slug:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('about/', views.about, name='blog-about'),
 ]
