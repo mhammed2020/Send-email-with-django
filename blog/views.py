@@ -132,7 +132,7 @@ class ProjectListView(ListView):
     template_name = 'blog/allposts.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'allposts'
     ordering = ['-created']
-    paginate_by = 4
+    paginate_by = 8
 
 class ProjectDetailView(DetailView):
     model = Project
