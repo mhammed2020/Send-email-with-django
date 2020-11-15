@@ -8,13 +8,15 @@ from .views import (
     PostDeleteView,
     UserPostListView,
     ProjectListView,
-    ProjectDetailView
+    ProjectDetailView,
+    BookListView
     
 )
 from . import views
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
-    path('project/', ProjectListView.as_view(), name='allPosts'),
+    path('project/', ProjectListView.as_view(), name='project-home'),
+    path('book/', BookListView.as_view(), name='book-home'),
 
         path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
 

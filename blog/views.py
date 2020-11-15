@@ -7,7 +7,7 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-from .models import Post,Comment,Project
+from .models import Post,Comment,Project, Book
 from django.contrib.auth.models import User
 
 #comment form section
@@ -27,6 +27,12 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['-date_posted']
     paginate_by = 4
+
+class BookListView(ListView):
+    model = Book
+    template_name = 'blog/books.html'  # <app>/<model>_<viewtype>.html
+    context_object_name = 'books'
+   
 
 
 class UserPostListView(ListView):

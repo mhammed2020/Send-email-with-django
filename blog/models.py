@@ -49,5 +49,12 @@ class Project(models.Model):
     def __str__(self):
         return  self.title
 
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    img=models.ImageField(upload_to='post_img/',default='post_img/default.png')
+    def __str__(self):
+        return  self.title
+
+
     
     
