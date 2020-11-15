@@ -2,10 +2,14 @@
 {% block content %}
     {% for book in books %}
         <article class="media content-section">
-          <img style="width:20%" src="{{ book.img.url }}">
+             <img style="width:20%" src="{{ book.img.url }}">
+
+            
           <div class="media-body">
             
-            <h2><a class="article-title" href="#">{{ book.title }}</a></h2>
+            <h2><a class="article-title" 
+                href="https://www.amazon.com/s?k=python&__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss_2">
+                {{ book.title }}</a></h2>
           </div>
         </article>
     {% endfor %}
