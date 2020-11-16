@@ -1,0 +1,42 @@
+
+{% extends "blog/base.html" %}
+{% block content %}
+{% load  static %}
+<div class="card-group">
+    <div class="card">
+      <img class="mb-3" src="{% static 'blog/img/image_large.jpg' %}" alt=" logo " style="width:100%">
+
+      <div class="card-body">
+        <h5 class="card-title">Formation Python</h5>
+        <p class="card-text">
+            Axée principalement sur le développement de l'autonomie, la formation est extrêmement pratique afin de vous permettre de bien assimiler les concepts de ce fabuleux langage.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+        <img class="mb-3" src="{% static 'blog/img/pexels-photo-52608.jpeg' %}" alt=" logo " style="width:100%">
+        <div class="card-body">
+        <h5 class="card-title">Formation Python avancé</h5>
+        <p class="card-text">Cette formation Python est destinée aux développeurs souhaitant approfondir leur connaissance du langage Python et met l'accent sur la structuration du code.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+        <img class="mb-3" src="{% static 'blog/img/pexels-photo.jpg' %}" alt=" logo " style="width:100%">
+        <div class="card-body">
+        <h5 class="card-title">Django Rest Framework</h5>
+        <p class="card-text">Django Rest Framework est une extension à Django pour développer rapidement des API REST robustes au goût du jour. Reprenant la philosophie Django, la prise en main est rapide et efficace.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+
+
+
+  {% endblock content %}

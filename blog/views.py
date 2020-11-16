@@ -126,6 +126,8 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
+def training(request):
+    return render(request, 'blog/training.html', {'title': 'formation'})
 
 class ProjectListView(ListView):
     model = Project
